@@ -7,8 +7,10 @@ luci for [heavenke_luci](https://github.com/heavenke/heavenke_luci)
 
 ```shell
 echo >> feeds.conf.default
+echo 'src-git heavenke_packages https://github.com/heavenke/heavenke_packages.git;main' >> feeds.conf.default
 echo 'src-git heavenke_luci https://github.com/heavenke/heavenke_luci.git;main' >> feeds.conf.default
-./scripts/feeds update heavenke_luci
+./scripts/feeds update heavenke_packages heavenke_luci
+./scripts/feeds install -a -p heavenke_packages
 ./scripts/feeds install -a -p heavenke_luci
 ```
 
