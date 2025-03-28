@@ -1,5 +1,6 @@
-# heavenke_luci
-luci for [heavenke_luci](https://github.com/heavenke/heavenke_luci)
+# 个人收藏的OpenWrt插件包
+
+## 注意: 这些插件非本人原创, 系从网络收集而来, 个别插件可能作了一些改动以适配本人的设备.
 
 ## 使用方法
 
@@ -24,11 +25,20 @@ make menuconfig
 ```plain
 LuCI --->
 3. Applications --->
-<*> luci-app-ddnsto.................................. LuCI support for ddnsto
-<*> luci-app-linkease.................................. LuCI support for linkease
+<*> luci-app-msd_lite.................................. LuCI support for Multi stream daemon lite
+<*> luci-app-socat.................................. LuCI support for Socat
+<*> luci-app-systools.................................. LuCI support for SysTools
+<*> luci-app-taskplan.................................. LuCI support for Task Plan setting
 ```
 
 ### 构建固件
+
+多线程
 ```shell
-make
+make V=s -j$(nproc)
+```
+
+单线程
+```shell
+make V=sc -j1
 ```
